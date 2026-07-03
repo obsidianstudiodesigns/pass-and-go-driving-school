@@ -148,6 +148,12 @@
       linear-gradient(to top, var(--bg) 0%, rgba(7,11,20,.25) 32%, rgba(7,11,20,.35) 100%);
   }
   #hero .hero-logo{width:min(280px,55vw);margin-bottom:10px;filter:drop-shadow(0 10px 40px rgba(0,0,0,.8))}
+  .hero-mascot{
+    width:min(140px,30vw);margin:2px 0 14px;
+    filter:drop-shadow(0 12px 30px rgba(0,0,0,.6));
+    animation:bob 3.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
   .hero-cta{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -308,7 +314,40 @@
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none}
     .mouse::after{animation:none}
+    .hero-mascot{animation:none}
   }
+
+  /* ---------- pricing ---------- */
+  .price-card{display:flex;flex-direction:column}
+  .price-card .desc{margin-bottom:4px}
+  .price-card .price{
+    font-size:2.7rem;font-weight:900;letter-spacing:-1px;
+    margin:16px 0 2px;color:var(--text);
+  }
+  .price-card .per{color:var(--muted);font-size:.85rem;font-weight:600;margin-bottom:18px}
+  .badge-value{
+    position:absolute;top:16px;right:16px;
+    background:var(--yellow);color:#1a1403;
+    font-weight:800;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;
+    padding:5px 11px;border-radius:999px;
+  }
+  .price-list{list-style:none;margin:16px 0 18px;display:flex;flex-direction:column;gap:11px}
+  .price-list li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    border-bottom:1px dashed var(--stroke);padding-bottom:11px;
+    color:var(--muted);font-weight:600;font-size:.95rem;
+  }
+  .price-list li:last-child{border-bottom:0;padding-bottom:0}
+  .price-list li b{color:var(--text);font-weight:800;font-size:1.05rem;white-space:nowrap}
+  .price-cta{
+    margin-top:auto;display:inline-flex;justify-content:center;align-items:center;gap:8px;
+    padding:12px 20px;border-radius:999px;text-decoration:none;
+    font-weight:800;font-size:.92rem;
+    background:color-mix(in srgb,var(--accent,var(--green)) 16%,transparent);
+    border:1px solid color-mix(in srgb,var(--accent,var(--green)) 45%,transparent);
+    color:var(--text);transition:background .25s,transform .25s;
+  }
+  .price-cta:hover{background:color-mix(in srgb,var(--accent,var(--green)) 30%,transparent);transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -323,6 +362,7 @@
   <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
     <a href="#why">Why Us</a>
+    <a href="#pricing">Pricing</a>
     <a href="#journey">Your Journey</a>
     <a href="#contact">Contact</a>
     <a class="nav-call" href="tel:+27813672750">📞 081 367 2750</a>
@@ -342,6 +382,7 @@
       </video>
     </div>
     <img class="hero-logo reveal" src="LOGO.png" alt="Pass and Go!">
+    <img class="hero-mascot reveal" src="LOGO2.png" alt="Pass & Go learner driver mascot">
     <div class="kicker reveal">Pretoria • K53 Driving School</div>
     <h1 class="reveal">Learn to drive.<br>Then <span class="go">Pass &amp; GO!</span></h1>
     <p class="lead reveal" style="color:#cbd5e1">From your very first lesson to the day you hold your licence card — we take beginners all the way. All codes, all areas, six days a week, with pick-up and drop-off included.</p>
@@ -417,6 +458,53 @@
       <div class="stat reveal"><b>6</b><span>Days a Week</span></div>
       <div class="stat reveal"><b>100%</b><span>Beginner Friendly</span></div>
       <div class="stat reveal"><b>PTA</b><span>All Areas</span></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="kicker reveal">Pricing</div>
+    <h2 class="reveal">Upfront prices.<br>No surprises.</h2>
+    <p class="lead reveal">Pay per lesson or save with a package — WhatsApp us to book the one that fits you.</p>
+    <div class="grid grid-2">
+      <div class="card price-card accent-g reveal">
+        <div class="icon">📘</div>
+        <h3>Full Learners Licence Package</h3>
+        <p class="desc">Any code — everything you need to pass your learners.</p>
+        <div class="price">R1350</div>
+        <div class="per">once-off, any code</div>
+        <a class="price-cta" href="https://wa.me/27813672750?text=Hi%20Pass%20%26%20Go!%20I%27m%20interested%20in%20the%20Full%20Learners%20Licence%20Package%20(R1350)." target="_blank" rel="noopener">💬 Book this package</a>
+      </div>
+      <div class="card price-card accent-y reveal">
+        <div class="icon">🚗</div>
+        <h3>5 Lesson Code 8 Licence Package</h3>
+        <p class="desc">Five Code 8 K53 lessons to get you licence-test ready.</p>
+        <div class="price">R3300</div>
+        <div class="per">5 lessons • Code 8</div>
+        <a class="price-cta" href="https://wa.me/27813672750?text=Hi%20Pass%20%26%20Go!%20I%27m%20interested%20in%20the%205%20Lesson%20Code%208%20Licence%20Package%20(R3300)." target="_blank" rel="noopener">💬 Book this package</a>
+      </div>
+      <div class="card price-card accent-g reveal">
+        <span class="badge-value">Best value</span>
+        <div class="icon">🏆</div>
+        <h3>10 Lesson Licence Package</h3>
+        <p class="desc">Ten full lessons — the most practice per rand for test-day confidence.</p>
+        <div class="price">R4400</div>
+        <div class="per">10 lessons</div>
+        <a class="price-cta" href="https://wa.me/27813672750?text=Hi%20Pass%20%26%20Go!%20I%27m%20interested%20in%20the%2010%20Lesson%20Licence%20Package%20(R4400)." target="_blank" rel="noopener">💬 Book this package</a>
+      </div>
+      <div class="card price-card accent-r reveal">
+        <div class="icon">🕐</div>
+        <h3>Code 8 Driving Lessons</h3>
+        <p class="desc">Book lessons one at a time, or save in bundles.</p>
+        <ul class="price-list">
+          <li>1 Lesson <b>R290</b></li>
+          <li>5 Lessons <b>R1400</b></li>
+          <li>10 Lessons <b>R2700</b></li>
+        </ul>
+        <a class="price-cta" href="https://wa.me/27813672750?text=Hi%20Pass%20%26%20Go!%20I%27d%20like%20to%20book%20Code%208%20driving%20lessons." target="_blank" rel="noopener">💬 Book lessons</a>
+      </div>
     </div>
   </section>
 
