@@ -1,0 +1,8 @@
+# local tooling
+.claude/
+
+# original client asset (unedited, contains watermark)
+Video.mp4
+
+# single-file client preview (generated from index.html)
+Pass-and-Go-Website-Preview.html
