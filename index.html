@@ -147,13 +147,17 @@
       linear-gradient(to right, rgba(5,9,17,.9) 0%, rgba(5,9,17,.55) 48%, rgba(5,9,17,.28) 100%),
       linear-gradient(to top, var(--bg) 0%, rgba(7,11,20,.25) 32%, rgba(7,11,20,.35) 100%);
   }
-  #hero .hero-logo{width:min(280px,55vw);margin-bottom:10px;filter:drop-shadow(0 10px 40px rgba(0,0,0,.8))}
+  .hero-brand{
+    display:flex;flex-direction:column;align-items:center;
+    width:min(280px,55vw);margin-bottom:16px;
+  }
+  #hero .hero-logo{width:100%;filter:drop-shadow(0 10px 40px rgba(0,0,0,.8))}
   .hero-mascot{
-    width:min(140px,30vw);margin:2px 0 14px;
+    width:min(92px,20vw);margin-bottom:6px;
     filter:drop-shadow(0 12px 30px rgba(0,0,0,.6));
     animation:bob 3.6s ease-in-out infinite;
   }
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   .hero-cta{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -381,8 +385,10 @@
         <source src="hero.mp4" type="video/mp4">
       </video>
     </div>
-    <img class="hero-logo reveal" src="LOGO.png" alt="Pass and Go!">
-    <img class="hero-mascot reveal" src="LOGO2.png" alt="Pass & Go learner driver mascot">
+    <div class="hero-brand reveal">
+      <img class="hero-mascot" src="LOGO2.png" alt="Pass & Go learner driver mascot">
+      <img class="hero-logo" src="LOGO.png" alt="Pass and Go!">
+    </div>
     <div class="kicker reveal">Pretoria • K53 Driving School</div>
     <h1 class="reveal">Learn to drive.<br>Then <span class="go">Pass &amp; GO!</span></h1>
     <p class="lead reveal" style="color:#cbd5e1">From your very first lesson to the day you hold your licence card — we take beginners all the way. All codes, all areas, six days a week, with pick-up and drop-off included.</p>
